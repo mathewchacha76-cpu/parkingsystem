@@ -1,0 +1,40 @@
+{% extends "base.html" %}
+{% block title %}Rate Management - SmartPark KE{% endblock %}
+
+{% block content %}
+
+  <section class="form-section">
+    <h1>Manage parking rates</h1>
+    <p class="form-sub">
+      Update fees here at any time. Changes apply immediately to every
+      new fee calculation &mdash;.
+    </p>
+
+    <form method="POST" action="{{ url_for('admin_rates') }}" class="park-form rate-form">
+
+      <label for="free_minutes">Free parking limit (minutes)</label>
+      <input type="number" id="free_minutes" name="free_minutes" value="{{ rates.free_minutes }}" min="0" required>
+
+      <label for="band1_minutes">Band 1 &mdash; up to (minutes)</label>
+      <input type="number" id="band1_minutes" name="band1_minutes" value="{{ rates.band1_minutes }}" min="0" required>
+      <label for="band1_fee">Band 1 fee (Kshs.)</label>
+      <input type="number" id="band1_fee" name="band1_fee" value="{{ rates.band1_fee }}" min="0" required>
+
+      <label for="band2_minutes">Band 2 &mdash; up to (minutes)</label>
+      <input type="number" id="band2_minutes" name="band2_minutes" value="{{ rates.band2_minutes }}" min="0" required>
+      <label for="band2_fee">Band 2 fee (Kshs.)</label>
+      <input type="number" id="band2_fee" name="band2_fee" value="{{ rates.band2_fee }}" min="0" required>
+
+      <label for="band3_minutes">Band 3 &mdash; up to (minutes)</label>
+      <input type="number" id="band3_minutes" name="band3_minutes" value="{{ rates.band3_minutes }}" min="0" required>
+      <label for="band3_fee">Band 3 fee (Kshs.)</label>
+      <input type="number" id="band3_fee" name="band3_fee" value="{{ rates.band3_fee }}" min="0" required>
+
+      <label for="over_limit_fee">Over Band 3 fee (Kshs.)</label>
+      <input type="number" id="over_limit_fee" name="over_limit_fee" value="{{ rates.over_limit_fee }}" min="0" required>
+
+      <button type="submit" class="btn btn-primary">Save new rates</button>
+    </form>
+  </section>
+
+{% endblock %}

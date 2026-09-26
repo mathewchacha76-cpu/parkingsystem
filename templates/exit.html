@@ -1,0 +1,64 @@
+{% extends "base.html" %}
+{% block title %}Vehicle Exit - SmartPark KE{% endblock %}
+
+{% block content %}
+
+  {% if not show_payment %}
+
+    <section class="form-section">
+      <h1>Ready to leave?</h1>
+      <p class="form-sub">Enter the number plate to calculate the parking fee.</p>
+
+      <form method="POST" action="{{ url_for('exit_vehicle') }}" class="park-form">
+        <label for="plate">Number plate</label>
+        <input
+          type="text"
+          id="plate"
+          name="plate"
+          placeholder="e.g. KDA 123A"
+          autocomplete="off"
+          required
+        >
+        <input type="hidden" name="action" value="calculate">
+        <button type="submit" class="btn btn-primary">Calculate fee</button>
+      </form>
+    </section>
+
+  {% else %}
+
+    <section class="form-section">
+      <h1>Fee calculated</h1>
+      <div class="receipt">
+        <div class="receipt-row">
+          <span>Number plate</span>
+          <strong>{{ plate }}</strong>
+        </div>
+        <div class="receipt-row">
+          <span>Time parked</span>
+          <strong>{{ duration }} minutes</strong>
+        </div>
+        <div class="receipt-row receipt-total">
+          <span>Amount due</span>
+          <strong>Kshs. {{ fee }}</strong>
+        </div>
+      </div>
+
+      <form method="POST" action="{{ url_for('exit_vehicle') }}" class="park-form">
+        <input type="hidden" name="plate" value="{{ plate }}">
+        <input type="hidden" name="action" value="pay">
+
+        <label for="payment_method">Payment method</label>
+        <select id="payment_method" name="payment_method" required>
+          <option value="" disabled selected>Choose a payment method</option>
+          {% for method in payment_methods %}
+            <option value="{{ method }}">{{ method }}</option>
+          {% endfor %}
+        </select>
+
+        <button type="submit" class="btn btn-primary">Confirm payment &amp; open barrier</button>
+      </form>
+    </section>
+
+  {% endif %}
+
+{% endblock %}

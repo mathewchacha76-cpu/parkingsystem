@@ -1,0 +1,159 @@
+{
+  "rates": {
+    "free_minutes": 30,
+    "band1_minutes": 120,
+    "band1_fee": 50,
+    "band2_minutes": 240,
+    "band2_fee": 100,
+    "band3_minutes": 360,
+    "band3_fee": 300,
+    "over_limit_fee": 500
+  },
+  "slots": [
+    {
+      "slot_id": 1,
+      "status": "Free"
+    },
+    {
+      "slot_id": 2,
+      "status": "Free"
+    },
+    {
+      "slot_id": 3,
+      "status": "Free"
+    },
+    {
+      "slot_id": 4,
+      "status": "Free"
+    },
+    {
+      "slot_id": 5,
+      "status": "Free"
+    },
+    {
+      "slot_id": 6,
+      "status": "Occupied"
+    },
+    {
+      "slot_id": 7,
+      "status": "Free"
+    },
+    {
+      "slot_id": 8,
+      "status": "Occupied"
+    },
+    {
+      "slot_id": 9,
+      "status": "Occupied"
+    },
+    {
+      "slot_id": 10,
+      "status": "Free"
+    }
+  ],
+  "vehicles": {
+    "KJE 57P": {
+      "slot_id": 6,
+      "entry_time": "2026-09-24T22:24:01",
+      "exit_time": null,
+      "fee": null,
+      "paid": false
+    },
+    "3HDG948": {
+      "slot_id": 8,
+      "entry_time": "2026-09-24T22:24:24",
+      "exit_time": null,
+      "fee": null,
+      "paid": false
+    },
+    "DKF 93": {
+      "slot_id": 9,
+      "entry_time": "2026-09-24T22:24:35",
+      "exit_time": null,
+      "fee": null,
+      "paid": false
+    }
+  },
+  "transactions": [
+    {
+      "plate": "QWE 212",
+      "slot_id": 1,
+      "entry_time": "2026-09-24T21:59:30",
+      "exit_time": "2026-09-24T22:10:28",
+      "duration_minutes": 11.0,
+      "fee": 500,
+      "payment_method": "M-Pesa",
+      "paid_at": "2026-09-24T22:11:23"
+    },
+    {
+      "plate": "837 JDH",
+      "slot_id": 10,
+      "entry_time": "2026-09-24T22:24:45",
+      "exit_time": "2026-09-25T15:28:31",
+      "duration_minutes": 1023.8,
+      "fee": 500,
+      "payment_method": "Card",
+      "paid_at": "2026-09-25T15:28:46"
+    },
+    {
+      "plate": "HTD 467",
+      "slot_id": 7,
+      "entry_time": "2026-09-24T22:24:12",
+      "exit_time": "2026-09-25T15:29:29",
+      "duration_minutes": 1025.3,
+      "fee": 500,
+      "payment_method": "Card",
+      "paid_at": "2026-09-25T15:29:36"
+    },
+    {
+      "plate": "YTF 87",
+      "slot_id": 4,
+      "entry_time": "2026-09-24T22:06:33",
+      "exit_time": "2026-09-25T15:30:11",
+      "duration_minutes": 1043.6,
+      "fee": 500,
+      "payment_method": "M-Pesa",
+      "paid_at": "2026-09-25T15:30:18"
+    },
+    {
+      "plate": "KDA 123",
+      "slot_id": 2,
+      "entry_time": "2026-09-24T22:00:00",
+      "exit_time": "2026-09-25T15:30:45",
+      "duration_minutes": 1050.8,
+      "fee": 500,
+      "payment_method": "M-Pesa",
+      "paid_at": "2026-09-25T15:30:50"
+    },
+    {
+      "plate": "YHG 786",
+      "slot_id": 5,
+      "entry_time": "2026-09-24T22:07:43",
+      "exit_time": "2026-09-25T15:31:16",
+      "duration_minutes": 1043.5,
+      "fee": 500,
+      "payment_method": "Card",
+      "paid_at": "2026-09-25T15:31:22"
+    },
+    {
+      "plate": "K4T AT",
+      "slot_id": 3,
+      "entry_time": "2026-09-24T22:04:26",
+      "exit_time": "2026-09-25T15:31:55",
+      "duration_minutes": 1047.5,
+      "fee": 500,
+      "payment_method": "Cash",
+      "paid_at": "2026-09-25T15:32:02"
+    },
+    {
+      "plate": "JI 97 Y",
+      "slot_id": 1,
+      "entry_time": "2026-09-24T22:18:59",
+      "exit_time": "2026-09-25T15:32:24",
+      "duration_minutes": 1033.4,
+      "fee": 500,
+      "payment_method": "M-Pesa",
+      "paid_at": "2026-09-25T15:32:30"
+    }
+  ]
+}

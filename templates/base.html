@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>{% block title %}Nextgen Parking System{% endblock %}</title>
+<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+  <header class="site-header">
+    <a href="{{ url_for('index') }}" class="brand">
+      <span class="brand-mark"></span>
+      NextGen Parking <span class="brand-ke">System</span>
+    </a>
+    <nav class="site-nav">
+      <a href="{{ url_for('index') }}">Slots</a>
+      <a href="{{ url_for('entry') }}">Vehicle Entry</a>
+      <a href="{{ url_for('exit_vehicle') }}">Vehicle Exit</a>
+      <a href="{{ url_for('reports') }}">Reports</a>
+      <a href="{{ url_for('admin_rates') }}">Admin: Rates</a>
+    </nav>
+  </header>
+
+  {% with messages = get_flashed_messages(with_categories=true) %}
+    {% if messages %}
+      <div class="flash-area">
+        {% for category, message in messages %}
+          <p class="flash flash-{{ category }}">{{ message }}</p>
+        {% endfor %}
+      </div>
+    {% endif %}
+  {% endwith %}
+
+  <main class="page">
+    {% block content %}{% endblock %}
+  </main>
+
+  <footer class="site-footer">
+    NextGen Parking System
+  </footer>
+
+</body>
+</html>

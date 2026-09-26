@@ -1,0 +1,55 @@
+{% extends "base.html" %}
+{% block title %}Reports - SmartPark KE{% endblock %}
+
+{% block content %}
+
+  <section class="hero">
+    <h1>Kshs. {{ total_revenue }} collected</h1>
+    <p class="hero-sub">{{ transaction_count }} completed transactions on record.</p>
+  </section>
+
+  <section class="method-summary">
+    {% for method, amount in by_method.items() %}
+      <div class="method-card">
+        <span class="method-name">{{ method }}</span>
+        <span class="method-amount">Kshs. {{ amount }}</span>
+      </div>
+    {% endfor %}
+  </section>
+
+  <section class="report-table-wrap">
+    <table class="report-table">
+      <thead>
+        <tr>
+          <th>Plate</th>
+          <th>Slot</th>
+          <th>Entry</th>
+          <th>Exit</th>
+          <th>Duration (min)</th>
+          <th>Fee</th>
+          <th>Method</th>
+          <th>Paid at</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for t in transactions %}
+        <tr>
+          <td>{{ t.plate }}</td>
+          <td>{{ t.slot_id }}</td>
+          <td>{{ t.entry_time }}</td>
+          <td>{{ t.exit_time }}</td>
+          <td>{{ t.duration_minutes }}</td>
+          <td>Kshs. {{ t.fee }}</td>
+          <td>{{ t.payment_method }}</td>
+          <td>{{ t.paid_at }}</td>
+        </tr>
+        {% else %}
+        <tr>
+          <td colspan="8" class="report-empty">No transactions recorded yet.</td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </section>
+
+{% endblock %}

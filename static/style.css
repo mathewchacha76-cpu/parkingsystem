@@ -1,0 +1,404 @@
+/* ---------------------------------------------------------
+   SmartPark KE - Stylesheet
+   Palette inspired by tarmac, painted bay lines, and road signage
+--------------------------------------------------------- */
+
+:root {
+  --tarmac: #1C2622;
+  --tarmac-soft: #2B3833;
+  --paper: #F5F2EA;
+  --line-yellow: #E0A72E;
+  --bay-free: #2F7A5C;
+  --bay-occupied: #B3402F;
+  --ink: #1C2622;
+  --ink-soft: #5B6560;
+  --border: #D8D2C2;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  background: var(--paper);
+  color: var(--ink);
+  line-height: 1.5;
+}
+
+/* ---------- Header ---------- */
+
+.site-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px 32px;
+  background: var(--tarmac);
+  color: var(--paper);
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: var(--paper);
+  text-decoration: none;
+  font-size: 1.25rem;
+  font-weight: 700;
+  letter-spacing: 0.01em;
+}
+
+.brand-mark {
+  width: 14px;
+  height: 14px;
+  background: var(--line-yellow);
+  border-radius: 3px;
+}
+
+.brand-ke {
+  color: var(--line-yellow);
+}
+
+.site-nav {
+  display: flex;
+  gap: 24px;
+}
+
+.site-nav a {
+  color: var(--paper);
+  text-decoration: none;
+  font-size: 0.95rem;
+  opacity: 0.85;
+  border-bottom: 2px solid transparent;
+  padding-bottom: 2px;
+}
+
+.site-nav a:hover {
+  opacity: 1;
+  border-bottom-color: var(--line-yellow);
+}
+
+/* ---------- Flash messages ---------- */
+
+.flash-area {
+  max-width: 720px;
+  margin: 20px auto 0;
+  padding: 0 24px;
+}
+
+.flash {
+  padding: 12px 16px;
+  border-radius: 6px;
+  font-size: 0.95rem;
+  margin-bottom: 10px;
+}
+
+.flash-success {
+  background: #E4F0E9;
+  color: var(--bay-free);
+  border: 1px solid var(--bay-free);
+}
+
+.flash-error {
+  background: #F6E4E1;
+  color: var(--bay-occupied);
+  border: 1px solid var(--bay-occupied);
+}
+
+/* ---------- Page layout ---------- */
+
+.page {
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 48px 24px 80px;
+}
+
+/* ---------- Hero ---------- */
+
+.hero h1 {
+  font-size: 2.1rem;
+  margin: 0 0 8px;
+}
+
+.hero-sub {
+  color: var(--ink-soft);
+  margin: 0 0 32px;
+}
+
+/* ---------- Bay board (Slot Display Module) ---------- */
+
+.bay-board {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 12px;
+  margin-bottom: 40px;
+}
+
+.bay {
+  border: 2px dashed var(--border);
+  border-radius: 4px;
+  padding: 16px 8px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.bay-number {
+  font-size: 1.4rem;
+  font-weight: 700;
+}
+
+.bay-status {
+  font-size: 0.78rem;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.bay-free {
+  border-color: var(--bay-free);
+  background: #EAF4EE;
+}
+
+.bay-free .bay-status {
+  color: var(--bay-free);
+}
+
+.bay-occupied {
+  border-color: var(--bay-occupied);
+  background: #F7EAE7;
+}
+
+.bay-occupied .bay-status {
+  color: var(--bay-occupied);
+}
+
+/* ---------- Buttons ---------- */
+
+.cta-row {
+  display: flex;
+  gap: 12px;
+}
+
+.btn {
+  display: inline-block;
+  padding: 13px 22px;
+  border-radius: 6px;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 0.95rem;
+  border: none;
+  cursor: pointer;
+}
+
+.btn-primary {
+  background: var(--tarmac);
+  color: var(--paper);
+}
+
+.btn-primary:hover {
+  background: var(--tarmac-soft);
+}
+
+.btn-secondary {
+  background: transparent;
+  color: var(--tarmac);
+  border: 2px solid var(--tarmac);
+}
+
+.btn-secondary:hover {
+  background: var(--tarmac);
+  color: var(--paper);
+}
+
+/* ---------- Forms ---------- */
+
+.form-section h1 {
+  font-size: 1.8rem;
+  margin-bottom: 6px;
+}
+
+.form-sub {
+  color: var(--ink-soft);
+  margin-bottom: 28px;
+}
+
+.park-form {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  max-width: 360px;
+}
+
+.park-form label {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--ink-soft);
+}
+
+.park-form input[type="text"] {
+  padding: 12px 14px;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  font-size: 1rem;
+  margin-bottom: 16px;
+}
+
+.park-form input[type="text"]:focus {
+  outline: 2px solid var(--line-yellow);
+  outline-offset: 1px;
+}
+
+.park-form .btn {
+  width: fit-content;
+}
+
+/* ---------- Select dropdown (payment method) ---------- */
+
+.park-form select {
+  padding: 12px 14px;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  font-size: 1rem;
+  margin-bottom: 16px;
+  background: white;
+  color: var(--ink);
+}
+
+.park-form select:focus {
+  outline: 2px solid var(--line-yellow);
+  outline-offset: 1px;
+}
+
+/* ---------- Rate management form ---------- */
+
+.rate-form input[type="number"] {
+  padding: 12px 14px;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  font-size: 1rem;
+  margin-bottom: 16px;
+}
+
+.rate-form input[type="number"]:focus {
+  outline: 2px solid var(--line-yellow);
+  outline-offset: 1px;
+}
+
+/* ---------- Reports page ---------- */
+
+.method-summary {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 32px;
+  flex-wrap: wrap;
+}
+
+.method-card {
+  flex: 1;
+  min-width: 140px;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.method-name {
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: var(--ink-soft);
+}
+
+.method-amount {
+  font-size: 1.3rem;
+  font-weight: 700;
+}
+
+.report-table-wrap {
+  overflow-x: auto;
+}
+
+.report-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.85rem;
+}
+
+.report-table th,
+.report-table td {
+  text-align: left;
+  padding: 10px 12px;
+  border-bottom: 1px solid var(--border);
+  white-space: nowrap;
+}
+
+.report-table th {
+  background: var(--tarmac);
+  color: var(--paper);
+  font-weight: 600;
+}
+
+.report-empty {
+  text-align: center;
+  color: var(--ink-soft);
+  padding: 24px !important;
+}
+
+/* ---------- Receipt (Fee calculation display) ---------- */
+
+.receipt {
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 20px;
+  margin-bottom: 28px;
+  max-width: 360px;
+}
+
+.receipt-row {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 0;
+  border-bottom: 1px solid var(--border);
+  font-size: 0.95rem;
+}
+
+.receipt-row:last-child {
+  border-bottom: none;
+}
+
+.receipt-total {
+  font-size: 1.1rem;
+  padding-top: 14px;
+}
+
+/* ---------- Footer ---------- */
+
+.site-footer {
+  text-align: center;
+  color: var(--ink-soft);
+  font-size: 0.8rem;
+  padding: 24px;
+  border-top: 1px solid var(--border);
+}
+
+/* ---------- Responsive ---------- */
+
+@media (max-width: 560px) {
+  .site-header {
+    flex-direction: column;
+    gap: 12px;
+    align-items: flex-start;
+  }
+
+  .bay-board {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .cta-row {
+    flex-direction: column;
+  }
+}

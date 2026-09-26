@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+{% block title %}Vehicle Entry - SmartPark KE{% endblock %}
+
+{% block content %}
+
+  <section class="form-section">
+    <h1>Record an arrival</h1>
+    <p class="form-sub">Enter the number plate to assign a bay and open the barrier.</p>
+
+    <form method="POST" action="{{ url_for('entry') }}" class="park-form">
+      <label for="plate">Number plate</label>
+      <input
+        type="text"
+        id="plate"
+        name="plate"
+        placeholder="e.g. KDA 123A"
+        autocomplete="off"
+        required
+      >
+      <button type="submit" class="btn btn-primary">Assign bay &amp; open barrier</button>
+    </form>
+  </section>
+
+{% endblock %}

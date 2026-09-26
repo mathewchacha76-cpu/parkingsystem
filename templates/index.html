@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+{% block title %}Slot Availability - SmartPark KE{% endblock %}
+
+{% block content %}
+
+  <section class="hero">
+    <h1>{{ free_count }} of {{ total_slots }} bays open</h1>
+    <p class="hero-sub">Live availability, updated the moment a car arrives or leaves.</p>
+  </section>
+
+  <section class="bay-board" aria-label="Parking bay status">
+    {% for slot in slots %}
+      <div class="bay {{ 'bay-free' if slot.status == 'Free' else 'bay-occupied' }}">
+        <span class="bay-number">{{ "%02d"|format(slot.slot_id) }}</span>
+        <span class="bay-status">{{ slot.status }}</span>
+      </div>
+    {% endfor %}
+  </section>
+
+  <section class="cta-row">
+    <a href="{{ url_for('entry') }}" class="btn btn-primary">Enter parking</a>
+    <a href="{{ url_for('exit_vehicle') }}" class="btn btn-secondary">Exit &amp; pay</a>
+  </section>
+
+{% endblock %}
