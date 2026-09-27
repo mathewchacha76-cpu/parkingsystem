@@ -1,5 +1,5 @@
 """
-NewGen parksystem - A Modern Parking Management System
+NextGen parksystem - A Modern Parking Management System
 
 
 MODULES IMPLEMENTED:
