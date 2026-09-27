@@ -1,5 +1,5 @@
 """
-SmartPark KE - A Modern Parking Management System
+NewGen parksystem - A Modern Parking Management System
 
 
 MODULES IMPLEMENTED:
