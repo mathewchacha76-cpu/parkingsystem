@@ -1,4 +1,4 @@
-# SmartPark KE
+# NetGen Parking System 
 
 A modern, web-based parking management system built for a client automating
 their parking operations in Kenya.
